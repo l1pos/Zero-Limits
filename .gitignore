@@ -1,0 +1,18 @@
+# Node dependencies
+/node_modules
+/build
+
+# Config and Environment
+.env
+.env.*
+.npm
+.vscode/
+
+# Logs and system files
+.DS_Store
+*.log
+npm-debug.log
+yarn-error.log
+
+# VITE specific
+.vite/
