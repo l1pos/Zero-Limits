@@ -1,0 +1,155 @@
+/* src/components/Section.css */
+
+.hall-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    /* Beautiful background: radial gradient with a purple neon center */
+    background-image: radial-gradient(circle at center, rgba(142, 0, 170, 0.15) 0%, rgba(0, 0, 0, 1) 70%); 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 10; 
+    color: white;
+    padding: 20px;
+}
+
+.hall-content {
+    max-width: 1200px;
+    padding: 20px;
+    width: 100%;
+}
+
+.hall-title {
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #ffffff; 
+    /* Neon effect for title */
+    text-shadow: 0 0 5px #8e00aaf6, 0 0 10px #8e00aaf6; 
+}
+
+.hall-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 50px;
+}
+
+/* --- EMPLOYEE CARDS STYLES --- */
+
+.employee-cards-container {
+    display: flex;
+    justify-content: center;
+    /* УВЕЛИЧЕННОЕ РАССТОЯНИЕ */
+    gap: 50px 50px; 
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.employee-card {
+    /* Design: black, purple with neon */
+    background-color: rgba(0, 0, 0, 0.5); 
+    border: 1px solid rgba(142, 0, 170, 0.5);
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Default neon effect */
+    box-shadow: 0 0 10px rgba(142, 0, 170, 0.4); 
+    position: relative;
+    cursor: pointer;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+    /* Brighter neon effect on hover */
+    box-shadow: 0 0 15px #8e00aaf6, 0 0 25px rgba(142, 0, 170, 0.8);
+}
+
+.card-image-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+    border: 3px solid transparent; 
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.neon-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Purple neon glow */
+    box-shadow: 0 0 8px #8e00aaf6, inset 0 0 8px #8e00aaf6; 
+    pointer-events: none; 
+}
+
+.card-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 5px 0;
+    color: #ffffff;
+    text-shadow: 0 0 3px rgba(142, 0, 170, 0.6);
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #af85b9; 
+    margin: 0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hall-content {
+        padding: 10px;
+    }
+    
+    .hall-title {
+        font-size: 2.5rem;
+    }
+    
+    .hall-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .employee-cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .employee-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .hall-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2rem; /* добавляем отступы для мобильных */
+}
+}

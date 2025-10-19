@@ -1,0 +1,234 @@
+/* src/components/Hero.css */
+
+/* --- BASE CONTAINERS --- */
+
+/* Hero section occupies the full viewport */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background video styles */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Overlay for centering content */
+.hero-overlay {
+    position: relative; 
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+/* --- HEADING STYLES --- */
+
+.hero-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-family: 'serif'; 
+    
+    opacity: 0; 
+    animation: fadeInUp 2s ease-out 0.5s forwards;
+    will-change: transform;
+}
+
+.line-top {
+    display: flex;
+    align-items: baseline; 
+    justify-content: center;
+    gap: 8px; 
+}
+
+/* Small words (THE, OF) */
+.small-the, 
+.small-off {
+    font-size: 24px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #8e00aaf6; 
+    line-height: 1; 
+    position: relative; 
+    /* Subtle black outline/shadow for contrast */
+    text-shadow: 
+        .5px .5px 0 #000, 
+        -.5px .5px 0 #000, 
+        .5px -.5px 0 #000,
+        -.5px -.5px 0 #000;
+}
+
+.small-the { top: -40px; }
+.small-off { top: 0px; }
+
+
+/* Big text (HALL, ZERO LIMITS) */
+.big-text {
+    font-size: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0; 
+    line-height: 1; 
+    /* Clearer black outline/shadow */
+    text-shadow: 
+        1px 1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+
+.bottom-text {
+    margin-top: 20px;
+    font-size: 72px;
+}
+
+/* --- SIGNATURE CONTAINER (Bottom Positioning) --- */
+.hero-signature-container {
+    position: absolute; 
+    bottom: 20px; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+/* --- SIGNATURE STYLES --- */
+
+.hero-signature {
+    /* Position is handled by .hero-signature-container */
+    position: static; 
+    display: flex;
+    align-items: center;
+    
+    /* Cleanup: ensure no default button styles are inherited */
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
+    border-radius: 0; 
+    
+    color: #ffffff; 
+    font-size: 10px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6; 
+    font-family: sans-serif; 
+
+    opacity: 0; 
+    animation: fadeInUp 2s ease-out 3s forwards; 
+
+    pointer-events: auto; /* Re-enable interaction for content */
+}
+
+/* Signature Logo */
+.signature-logo {
+    display: block;
+    height: 40px; 
+    width: auto; 
+    margin-right: 15px; 
+    filter: invert(100%); 
+}
+
+/* Copyright Text (Separator) */
+.copyright-text {
+    border-left: 1px solid #555; 
+    padding-left: 15px; 
+    line-height: 1; 
+}
+
+/* --- START BUTTON & ANIMATION --- */
+
+.start-button {
+    margin-top: 50px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0); 
+    border: 2px solid #fff; 
+    border-radius: 5px; 
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    opacity: 0; 
+    animation: fadeInUp 2s ease-out 2.5s forwards;
+}
+
+.start-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+/* Keyframes for the standard fadeInUp animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVENESS (Media Queries) --- */
+
+@media (max-width: 768px) {
+    .hero-heading .big-text {
+        font-size: 48px; 
+        line-height: 1;
+    }
+    .hero-heading .bottom-text {
+        font-size: 42px;
+        margin-top: 15px;
+    }
+    .line-top {
+        gap: 5px;
+    }
+    
+    .small-the, .small-off {
+        font-size: 10px;
+        letter-spacing: 4px;
+        position: relative; 
+        top: 0; 
+    }
+    .small-the {
+        top: -12px; 
+    }
+    .small-off {
+        top: 3px; 
+    }
+
+    .hero-signature-container {
+        bottom: 15px;
+    }
+    
+    .hero-signature {
+        padding: 0; 
+        font-size: 8px;
+    }
+    .signature-logo {
+        height: 30px; 
+        margin-right: 10px; 
+    }
+    .copyright-text {
+        padding-left: 10px;
+    }
+}

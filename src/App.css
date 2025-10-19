@@ -1,0 +1,42 @@
+/* src/App.css */
+
+/* --- GLOBAL RESET: Fixes top margin on Hero screen --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure body and html are full width/height */
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+/* --- SCROLLBAR HIDING: Must be aggressive to work in Chrome (Webkit) --- */
+
+/* Chrome, Safari, Opera (Webkit) */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important; 
+    height: 0 !important;
+}
+
+/* Firefox */
+body, html {
+    scrollbar-width: none !important; 
+}
+
+/* IE and Edge */
+body, html {
+    -ms-overflow-style: none !important;
+}
+
+/* --- BASE STYLES --- */
+.App {
+    background-color: #000;
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* Add other custom styles here if needed */

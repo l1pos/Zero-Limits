@@ -1,0 +1,103 @@
+/* src/components/ExtraSection.css */
+
+.extra-section-wrapper {
+    /* Style wrapper for full-viewport display and overflow control */
+    position: relative;
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* Background: radial neon gradient (Purple/Black) */
+    background: radial-gradient(circle at center, rgba(142, 0, 170, 0.2) 0%, rgba(0, 0, 0, 1) 70%);
+    background-color: #000;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+.extra-content {
+    max-width: 900px;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.extra-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    /* Bright neon green title effect */
+    color: #fff; 
+    text-shadow: 0 0 10px #3fdc77, 0 0 20px #3fdc77; 
+}
+
+.extra-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- CORE VALUES CARD STYLES --- */
+
+.core-values-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    background-color: rgba(0, 0, 0, 0.4); 
+    border: 1px solid rgba(63, 220, 119, 0.5); /* Green border accent */
+    padding: 25px;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(63, 220, 119, 0.3); /* Subtle green glow */
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #3fdc77, 0 0 30px rgba(63, 220, 119, 0.8);
+}
+
+.value-title {
+    font-size: 1.5rem;
+    color: #3fdc77; /* Green accent color */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.value-text {
+    font-size: 0.9rem;
+    color: #af85b9;
+}
+
+.extra-footer p {
+    font-style: italic;
+    color: #8e00aaf6; /* Purple accent color */
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .extra-title {
+        font-size: 2.5rem;
+    }
+    .core-values-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .value-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
